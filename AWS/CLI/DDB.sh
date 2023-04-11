@@ -1,0 +1,2 @@
+# Create dynamodb table
+aws dynamodb create-table --table-name tablename --attribute-definitions AttributeName=attributename,AttributeType=S  AttributeName=ttl,AttributeType=N --key-schema AttributeName=attributename,KeyType=HASH --provisioned-throughput ReadCapacityUnits=10,WriteCapacityUnits=10 --table-class STANDARD

@@ -1,0 +1,48 @@
+/* Flex */
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexDirectionColumn {
+    flex-direction: column;
+}
+
+.hCenter {
+    justify-content: center;
+}
+
+.vCenter {
+    align-items: center;
+}
+
+.flexSpaceEven {
+    justify-content: space-evenly;
+}
+
+/* End Flex */
+
+/* Margins and paddings */
+.padding1em {
+    padding: 1em;
+}
+
+.margin1em {
+    margin: 1em;
+}
+
+/* End margins and padding */
+
+/* Element Sizes */
+.width100P {
+    width: 100%;
+}
+
+.TAC {
+    text-align: center;
+}
+
+.takeFullSpaceInContainer {
+    width: 100%;
+    box-sizing: border-box;
+}

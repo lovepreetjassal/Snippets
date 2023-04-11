@@ -1,0 +1,1 @@
+dracut -f /boot/initramfs-"$(uname -r)".img "$(uname -r)"

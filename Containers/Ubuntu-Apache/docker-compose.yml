@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    apache:
+        container_name: apache
+        image: ubuntu/apache2
+        ports:
+            - "80:80"
+            - "443:443"
+        restart: unless-stopped
+        extra_hosts:
+            - "hostname:127.0.0.1"
+        volumes:
+            # Certs
+            - /etc/letsencrypt/live/example.org/privkey.pem:/etc/letsencrypt/live/example.org/privkey.pem:ro
+            - /etc/letsencrypt/live/example.org/fullchain.pem:/etc/letsencrypt/live/example.org/fullchain.pem:ro
+
+            # Apache Configs
+            - ./configs/apache2.conf:/etc/apache2/apache2.conf
+            - ./configs/modules.conf:/etc/apache2/mods-enabled/modules.conf
+            - /etc/letsencrypt/options-ssl-apache.conf:/etc/letsencrypt/options-ssl-apache.conf
+
+            # Websites
+            - ./sites/example.org/example.org.conf:/etc/apache2/sites-enabled/example.org.conf
+            - ./sites/example.org/example.org.SSL.conf:/etc/apache2/sites-enabled/example.org.SSL.conf

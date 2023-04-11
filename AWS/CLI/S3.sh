@@ -1,0 +1,2 @@
+# Copy Files to S3 via CLI
+docker run --rm -ti -v "/home/$USER/data/.aws:/root/.aws" -v $(pwd):/aws:z -e AWS_PROFILE=default amazon/aws-cli --region ca-central-1 --no-cli-pager s3 cp filename s3://bucketname/foldername/filename

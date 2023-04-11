@@ -1,0 +1,12 @@
+FROM node:lts as node
+WORKDIR /opt/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:latest
+COPY --from=node /app/dist/projectname /usr/share/nginx/html/
+COPY ./src/docker/default.conf /etc/nginx/conf.d/
+
+EXPOSE 80

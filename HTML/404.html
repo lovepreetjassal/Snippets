@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Not Found</title>
+    <style>
+        #main {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        #messageDiv {
+            font-size: 4em;
+            align-self: center;
+        }
+
+        @media screen and (max-width: 400px) {
+            #messageDiv {
+                font-size: 2em;
+            }
+        }
+
+        #message {
+            font-size: 50px;
+            padding-right: 12px;
+            animation: type .5s alternate infinite;
+        }
+
+        @keyframes type {
+            from {
+                box-shadow: inset -3px 0px 0px #888;
+            }
+
+            to {
+                box-shadow: inset -3px 0px 0px transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" style="height: 100%;">
+        <div id="messageDiv">
+            <h1 id="message">Page Not Found</h1>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+#main {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#vibgyortext {
+    font-size: 4em;
+    font-family: deja-vu sans mono;
+    align-self: center;
+}
+
+@media screen and (max-width: 400px) {
+    #vibgyortext {
+        font-size: 2em;
+    }
+}
