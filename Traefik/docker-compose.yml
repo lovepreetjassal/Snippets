@@ -5,7 +5,7 @@ services:
     image: "traefik"
     container_name: "traefik"
     networks:
-      - reverse-proxy-network
+      - reverseproxy
     command:
       - "--log.level=DEBUG"
       - "--api.insecure=true"
@@ -22,9 +22,9 @@ services:
     volumes:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-    restart: always
+    restart: unless-stopped
   whoami:
-    restart: always
+    restart: unless-stopped
     networks:
       - rp
     container_name: traefik-whoami
@@ -35,5 +35,5 @@ services:
       - "traefik.http.routers.whoami.entrypoints=websecure"
       - "traefik.http.routers.whoami.tls.certresolver=myresolver"
 networks:
-  reverse-proxy-network:
+  reverseproxy:
     external: true
