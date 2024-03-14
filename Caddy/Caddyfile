@@ -1,0 +1,7 @@
+:80 {
+        file_server browse
+        root * /usr/share/caddy
+        route /health {
+                respond "Healthy"
+        }
+}

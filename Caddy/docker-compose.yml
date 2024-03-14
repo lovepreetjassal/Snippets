@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+    caddy:
+        container_name: caddy
+        volumes:
+            - './Caddyfile:/etc/caddy/Caddyfile'
+            - './html:/usr/share/caddy'
+        ports:
+            - '80:80'
+        image: caddy
